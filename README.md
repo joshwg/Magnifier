@@ -21,6 +21,7 @@ A simple desktop magnification tool that displays a real-time magnified view of 
 ```bash
 pip install -r requirements.txt
 ```
+2. You will need to modify the scripts to use your directory structure and not mine.
 
 ## Usage
 
