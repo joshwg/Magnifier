@@ -11,14 +11,18 @@ A simple desktop magnification tool that displays a real-time magnified view of 
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.7+ (with Tkinter; on macOS, `brew install python-tk` if it's missing)
 - Pillow (PIL)
 - mss
 
+Runs on Windows, macOS, and Linux.
+
 ## Installation
 
-1. Install the required dependencies:
+1. Install the required dependencies (a virtualenv is recommended):
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 2. You will need to modify the scripts to use your directory structure and not mine.
@@ -30,9 +34,10 @@ Run the application:
 python magnifier.py
 ```
 
-Or use the batch file:
+Or use the launcher for your platform:
 ```bash
-run.bat
+./run.sh       # macOS/Linux
+run.bat        # Windows
 ```
 
 - The window will show a magnified view of the desktop area around your mouse cursor
@@ -52,6 +57,18 @@ powershell -ExecutionPolicy Bypass -File create_shortcut.ps1
 ```
 
 This will create a "Desktop Magnifier" entry in your Start Menu that launches the application without showing a console window.
+
+## Adding to Launchpad (macOS)
+
+To create a Launchpad and Spotlight entry:
+
+1. Open a terminal in the project directory
+2. Run the install script:
+```bash
+./install-app.sh
+```
+
+This symlinks `ScreenMagnifier.app` into `~/Applications`, where it appears in Launchpad and Spotlight and can be dragged to the Dock. It installs as "ScreenMagnifier" so it doesn't collide with the Magnifier utility built into macOS.
 
 ## How It Works
 
