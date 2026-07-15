@@ -1,0 +1,5 @@
+#!/bin/sh
+# ScreenMagnifier.app launcher: exec run.sh at the repo root.
+# pwd -P resolves symlinks, so this works via the ~/Applications symlink too.
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+exec "$DIR/../../../run.sh"
